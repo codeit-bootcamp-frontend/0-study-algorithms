@@ -5,13 +5,20 @@
   </head>
   <body>
     <script>
-      function solution(s, t) {
-        return s.split(t).length - 1;
-      }
+      function solution(s) {
+        let answer = 0;
+        for (let x of s) {
+          let num = x.charCodeAt();
+          if (num >= 65 && num <= 90) answer++;
+        }
 
-      let str = 'COMPUTERPROGRAMMING';
-      console.log(solution(str, 'R'));
-      // split() 메소드는 구분자를 이용하여 문자열을 배열로 바꾸는 메소드
+        return answer;
+      }
+      let str = 'KoreaTimeGood';
+      console.log(solution(str));
+      // heel.charCodeAt(number) number의 초기값은 0이며 3을 입력하면 l에 대한 아스키 코드를 리턴한다.
+      // charCodeAt는 index에 해당하는 문자의 unicode 값을 리턴, 65는 A 90은 Z 소문자는 97 ~ 122
+      // String.fromCharCode(num) 해당 아스키 코드를 문자열로 변환한다.
     </script>
   </body>
 </html>
