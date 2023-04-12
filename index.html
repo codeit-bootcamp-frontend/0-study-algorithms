@@ -7,20 +7,21 @@
     <script>
       function solution(arr) {
         let sum = 0;
-        let min = Number.MAX_SAFE_INTEGER;
         for (let x of arr) {
-          if (x % 2) {
-            sum += x;
-            if (min > x) min = x;
+          sum += x;
+        }
+        for (let i = 0; i < arr.length - 1; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (sum - arr[i] - arr[j] === 100) {
+              arr.splice(j, 1);
+              arr.splice(i, 1);
+            }
           }
         }
-        let answer = [];
-        answer.push(sum);
-        answer.push(min);
-        return answer;
+        return arr;
       }
 
-      arr = [12, 77, 38, 41, 53, 92, 85];
+      let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
       console.log(solution(arr));
     </script>
   </body>
