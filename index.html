@@ -5,24 +5,14 @@
   </head>
   <body>
     <script>
-      function solution(arr) {
-        let sum = 0;
-        for (let x of arr) {
-          sum += x;
-        }
-        for (let i = 0; i < arr.length - 1; i++) {
-          for (let j = i + 1; j < arr.length; j++) {
-            if (sum - arr[i] - arr[j] === 100) {
-              arr.splice(j, 1);
-              arr.splice(i, 1);
-            }
-          }
-        }
-        return arr;
+      function solution(s) {
+        return s.replace(/A/g, '#');
       }
 
-      let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
-      console.log(solution(arr));
+      let str = 'BANANA';
+      console.log(solution(str));
+      // str.replace(regexp|substr, newSubstr|function) 형식으로 첫번째 파라미터에 정규표현식을 넣을 수도 있다
+      // 리턴값으로는 어떤 패턴에 일치하는 일부 또는 모든 부분이 교체된 새로운 문자열
     </script>
   </body>
 </html>
