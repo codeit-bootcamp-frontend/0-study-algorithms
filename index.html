@@ -6,10 +6,14 @@
   <body>
     <script>
       function solution(n) {
-        return Math.ceil(n / 12);
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+          sum += i;
+        }
+        return sum;
       }
 
-      console.log(solution(178));
+      console.log(solution(10));
     </script>
   </body>
 </html>
