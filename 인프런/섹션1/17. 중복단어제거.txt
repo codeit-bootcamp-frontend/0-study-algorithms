@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer;
+                //console.log(s.indexOf("student"));
+                answer=s.filter((v, i)=>{
+                    //console.log(v, i);
+                    if(s.indexOf(v)===i) return v;
+                });
+
+                
+                return answer;
+            }
+            let str=["good", "time", "good", "time", "student"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
