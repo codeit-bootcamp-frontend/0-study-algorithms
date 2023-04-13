@@ -5,25 +5,30 @@
   </head>
   <body>
     <script>
-      function solution(n, arr) {
-        let answer = 0;
-        let max = Number.MIN_SAFE_INTEGER;
-        for (let x of arr) {
-          let sum = 0;
-          for (let num of x.toString()) {
-            sum += +num;
-          }
-          if (sum >= max) {
-            answer = Math.max(x, answer);
-            max = sum;
-          }
+      function isPrime(num) {
+        if (num === 1) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (!(num % i)) return false;
         }
-        console.log(max);
+        return true;
+      }
+
+      function solution(arr) {
+        let answer = [];
+        for (let x of arr) {
+          let res = 0;
+          while (x) {
+            let temp = x % 10;
+            res = res * 10 + temp;
+            x = parseInt(x / 10);
+          }
+          if (isPrime(res)) answer.push(res);
+        }
         return answer;
       }
 
-      let arr = [1019, 128, 460, 603, 40, 521, 137, 123];
-      console.log(solution(7, arr));
+      let arr = [32, 55, 62, 20, 250, 370, 200, 30, 100];
+      console.log(solution(arr));
     </script>
   </body>
 </html>
