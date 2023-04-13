@@ -1,9 +1,8 @@
 function solution(arr) {
-  let answer = Array.from({ length: 5 });
+  let answer = Array.from({ length: 5 }, () => 1);
   for (let i = 0; i < arr.length; i++) {
-    let count = 1;
     for (let j = 0; j < arr.length; j++) {
-      if (arr[i] < arr[j] && i !== j) count++;
+      if (arr[i] < arr[j]) answer[i]++;
     }
     answer[i] = count;
   }
