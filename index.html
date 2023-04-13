@@ -6,16 +6,15 @@
   <body>
     <script>
       function solution(s) {
-        let answer = '';
-        for (let x of s) {
-          let num = x.charCodeAt();
-          if (65 <= num && num <= 90) answer += String.fromCharCode(num + 32);
-          else answer += String.fromCharCode(num - 32);
-        }
+        let answer;
+        let mid = Math.floor(s.length / 2);
+        if (s.length % 2 === 1) answer = s.substring(mid, mid + 1);
+        else answer = s.substring(mid - 1, mid + 1);
+        //if(s.length%2===1) answer=s.substr(mid, 1);
+        //else answer=s.substr(mid-1, 2);
         return answer;
       }
-
-      console.log(solution('StuDY'));
+      console.log(solution('study'));
     </script>
   </body>
 </html>
