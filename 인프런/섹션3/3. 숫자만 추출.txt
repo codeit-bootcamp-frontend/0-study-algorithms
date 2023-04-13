@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                let answer="";
+                for(let x of str){
+                    if(!isNaN(x)) answer+=x;
+                }  
+                return parseInt(answer);
+            }
+            
+            let str="g0en2T0s8eSoft";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
