@@ -6,10 +6,13 @@
   <body>
     <script>
       function solution(s) {
-        let mid = parseInt(s.length / 2);
-        return s.length % 2 ? s.substr(mid, 1) : s.substr(mid - 1, 2);
+        let answer = '';
+        for (let i = 0; i < s.length; i++) {
+          if (s.indexOf(s[i]) === i) answer += s[i];
+        }
+        return answer;
       }
-      console.log(solution('wook'));
+      console.log(solution('ksekkset'));
     </script>
   </body>
 </html>
