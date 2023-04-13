@@ -6,13 +6,10 @@
   <body>
     <script>
       function solution(s) {
-        let answer = '';
-        for (let i = 0; i < s.length; i++) {
-          if (s.indexOf(s[i]) === i) answer += s[i];
-        }
-        return answer;
+        return s.filter((item, idx) => idx === s.indexOf(item));
       }
-      console.log(solution('ksekkset'));
+      let str = ['good', 'time', 'good', 'time', 'student'];
+      console.log(solution(str));
     </script>
   </body>
 </html>
