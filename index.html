@@ -5,23 +5,24 @@
   </head>
   <body>
     <script>
-      function solution(k, arr) {
-        let sum = 0;
-        let max = 0;
-
-        for (let i = 0; i < k; i++) {
-          sum += arr[i];
+      function solution(s) {
+        let answer = '';
+        let vote = new Map();
+        for (let x of s) {
+          if (!vote.has(x)) vote.set(x, 1);
+          else vote.set(x, vote.get(x) + 1);
         }
-        max = sum;
-        for (let i = k; i < arr.length; i++) {
-          sum += arr[i] - arr[i - k];
-          if (max < sum) max = sum;
+        let max = Number.MIN_SAFE_INTEGER;
+        for (let [key, value] of vote) {
+          if (value > max) {
+            answer = key;
+          }
         }
-        return max;
+        return answer;
       }
 
-      let a = [12, 15, 11, 20, 25, 10, 20, 19, 13, 15];
-      console.log(solution(3, a));
+      let str = 'BACBACCACCBDEDE';
+      console.log(solution(str));
     </script>
   </body>
 </html>
