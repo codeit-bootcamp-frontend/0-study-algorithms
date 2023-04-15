@@ -5,13 +5,15 @@ function solution(board, moves) {
     for (let i = 0; i < board.length; i++) {
       let temp = board[i][move - 1];
       if (board[i][move - 1] !== 0) {
+        let temp = board[i][move - 1];
+        board[i][move - 1] = 0;
         if (temp === stack[stack.length - 1]) {
-          answer++;
+          answer += 2;
           stack.pop();
         } else {
-          stack.push(board[i][move - 1]);
-          board[i][move - 1] = 0;
+          stack.push(temp);
         }
+        break;
       }
     }
   });
