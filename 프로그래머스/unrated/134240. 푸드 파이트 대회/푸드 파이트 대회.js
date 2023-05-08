@@ -5,15 +5,12 @@ function solution(food) {
             answer.push(i)    
       }
    }
-    let temp = [...answer]
-    for(let i = answer.length; i >= 0; i--) {
-        answer.push(temp[i])
-    }
-    for (let i = 0; i < answer.length; i++) {
-        if(!answer[i]) {
-            answer[i] = 0
-        }
-    }
+    const temp = [...answer]
+    temp.reverse()
+    console.log(temp)
+    answer.push(0)
+    answer = [...answer, ...temp]
+    console.log(answer)
     
     
     return answer.join('')
