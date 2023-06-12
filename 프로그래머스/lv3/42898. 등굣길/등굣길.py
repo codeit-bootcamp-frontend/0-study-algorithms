@@ -25,8 +25,6 @@ def solution(m, n, puddles):
     if puddles[0]:
         for y, x in puddles:
             map_info[x-1][y-1] = 0
-            
-    print(map_info)
         
     dp = [[None for _ in range(m)] for _ in range(n)]
     dp[0][0] = (0, 1)  # [0]: 최단거리 [1]: 최단거리 경우의 수
