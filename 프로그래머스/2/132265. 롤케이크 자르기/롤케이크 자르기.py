@@ -1,4 +1,5 @@
 def cal_unique_num(dict):
+    # values에서 0 이상인 값을 비교하는 것이 아닌 keys의 갯수를 비교하는 것이 핵심
     return len(dict.keys())
 
 def solution(topping):
@@ -30,6 +31,7 @@ def solution(topping):
         if right[topping[pointer]] > 0:
             right[topping[pointer]] -= 1
         if right[topping[pointer]] == 0:
+            # 토핑 갯수가 0이 되면 keys에서 삭제해서 가짓수를 줄인다
             del right[topping[pointer]]
         # 비교
         if cal_unique_num(left) == cal_unique_num(right):
