@@ -49,6 +49,10 @@ def solution(picks, minerals):
             weapon_idx += 1
     
     while weapon_idx <= 2 and minerals_idx < len(minerals_sort_list):
+        if picks[weapon_idx] == 0:
+            wepon_idx += 1
+            continue
+
         picks[weapon_idx] -= 1
         for i in range(1, 4):
             for _ in range(minerals_sort_list[minerals_idx][i]):
